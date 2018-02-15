@@ -7,8 +7,9 @@ class App extends Component {
   }
 
   instagramOAuth() {
-    fetch('/login/instagram')
-      .then(() => console.log('Instagram callback'));
+    fetch('https://api.instagram.com/oauth/authorize/?client_id=df0f827f058d4944b1ddc3eb28d73902&redirect_uri=https://lookhop.herokuapp.com/login/callback&response_type=code')
+      .then(() => console.log('Instagram oauth started'))
+      .catch(err => console.error('Error starting instagram oauth', err));
   }
 
   render() {
