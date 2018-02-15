@@ -9,5 +9,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, '../')));
 
 app.get('/login/instagram', (req, res) => res.send());
+app.get('login/callback', (req, res) => {
+  console.log('received oauth callback');
+  res.send();
+});
 
 app.listen(process.env.PORT || LOCAL_PORT)
